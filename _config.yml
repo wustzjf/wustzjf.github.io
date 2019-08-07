@@ -1,19 +1,19 @@
 # Site settings
-title: 一周思进
-SEOTitle: 一周思进
-header-img: img/blog_desk.jpeg
+title: 一周思进   #博客标题
+SEOTitle: 一周思进  #显示在浏览器上搜索的时候显示的标题
+header-img: img/blog_desk.jpeg  #显示在首页的背景图片
 email: wustzif@163.com
-description: "每周学习总结，相信可以走的更远."
+description: "每周学习总结，相信可以走的更远."  #网站介绍
 keyword: "一周思进"
-url: "https://wustzjf.github.io"
+url: "https://wustzjf.github.io"  #博客地址
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/wustzjf/wustzjf.github.io.git" # you code repository
 
+
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "每周学习总结，相信可以走的更远!"
-#sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
+sidebar-about-description: "我的公众号，欢迎关注!"
+sidebar-avatar: /img/sidebar.png     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 # SNS settings
@@ -29,12 +29,10 @@ exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 
-
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
-
-
+plugins:
+  - jekyll-feed
 
 
 # Markdown settings
@@ -47,20 +45,17 @@ kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
 
-
 # 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
 
 # Gitalk
-#gitalk:
-#  enable: true    #是否开启Gitalk评论
-#  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-#  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-#  repo: qiubaiying.github.io    #仓库名称
-#  owner: qiubaiying    #github用户名
-#  admin: qiubaiying
-#  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: c83ce3e2566870bb9557                            #生成的clientID
+  clientSecret: 406caedc4ce43d5962184ac017430bb930341030    #生成的clientSecret
+  repo: wustzjf.github.io    #仓库名称
+  owner: wustzjf    #github用户名
+  admin: wustzjf
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
 # 统计
