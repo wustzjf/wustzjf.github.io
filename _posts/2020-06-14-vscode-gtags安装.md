@@ -16,7 +16,7 @@ MAC 系统安装
 
 
 ```
-brew install gtags
+brew install global
 ```
 
 安装完之后，只需要在工程源码目录下执行 gatgs 命令，就会生成 GPATH（路径数据库）、 GRTAGS（引用数据库）、 GTAGS（定义数据库） 三个文件。
