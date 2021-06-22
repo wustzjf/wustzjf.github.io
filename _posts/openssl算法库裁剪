@@ -1,0 +1,197 @@
+
+grep -r '^#if.*OPENSSL_NO' . | grep -o 'OPENSSL_NO_[a-zA-Z0-9_]*' | sort -u | sed 's/OPENSSL_//' | tr '[A-Z_]' '[a-z-]'
+
+no-aes
+no-afalgeng
+no-algorithms
+no-asm
+no-async
+no-autoalginit
+no-autoerrinit
+no-bf
+no-blake2
+no-camellia
+no-cast
+no-chacha
+no-cmac
+no-cms
+no-comp
+no-crypto-mdebug
+no-crypto-mdebug-backtrace
+no-ct
+no-decc-init
+no-deprecated
+no-des
+no-dgram
+no-dh
+no-dsa
+no-dtls
+no-dtls1
+no-dtls1-2
+no-dtls1-2-method
+no-dtls1-method
+no-dynamic-engine
+no-ec
+no-ec2m
+no-ec-nistp-64-gcc-128
+no-egd
+no-engine
+no-err
+no-gost
+no-heartbeats
+no-hmac
+no-hw
+no-hw-padlock
+no-idea
+no-inline-asm
+no-md2
+no-md4
+no-md5
+no-mdc2
+no-multiblock
+no-nextprotoneg
+no-ocb
+no-ocsp
+no-poly1305
+no-posix-io
+no-psk
+no-rc2
+no-rc4
+no-rc5
+no-rdrand
+no-rfc3779
+no-rmd160
+no-rsa
+no-scrypt
+no-sct
+no-sctp
+no-seed
+no-sha
+no-sha1
+no-sock
+no-srp
+no-srtp
+no-ssl
+no-ssl3
+no-ssl3-method
+no-ssl-trace
+no-stdio
+no-tls
+no-tls1
+no-tls1-1
+no-tls1-1-method
+no-tls1-2
+no-tls1-2-method
+no-tls1-method
+no-ts
+no-ui
+no-unit-test
+no-weak-ssl-ciphers
+no-whirlpool
+
+--------------
+
+Ciphers:
+
+no-idea       -DOPENSSL_NO_IDEA
+no-aes        -DOPENSSL_NO_AES
+no-camellia   -DOPENSSL_NO_CAMELLIA
+no-seed       -DOPENSSL_NO_SEED
+no-bf         -DOPENSSL_NO_BF
+no-cast       -DOPENSSL_NO_CAST
+no-des        -DOPENSSL_NO_DES
+no-rc2        -DOPENSSL_NO_RC2
+no-rc4        -DOPENSSL_NO_RC4
+no-rc5        -DOPENSSL_NO_RC5
+
+no-md2        -DOPENSSL_NO_MD2
+no-md4        -DOPENSSL_NO_MD4
+no-md5        -DOPENSSL_NO_MD5
+no-sha        -DOPENSSL_NO_SHA
+no-ripemd     -DOPENSSL_NO_RIPEMD
+no-mdc2       -DOPENSSL_NO_MDC2
+
+no-rsa        -DOPENSSL_NO_RSA
+no-dsa        -DOPENSSL_NO_DSA
+no-dh         -DOPENSSL_NO_DH
+
+no-ec         -DOPENSSL_NO_EC
+no-ecdsa      -DOPENSSL_NO_ECDSA
+no-ecdh       -DOPENSSL_NO_ECDH
+
+Non-cipher functionality:
+
+no-sock       -DOPENSSL_NO_SOCK         No socket code.
+no-ssl2       -DOPENSSL_NO_SSL2         No SSLv2.
+no-ssl3       -DOPENSSL_NO_SSL3         No SSLv3.
+no-err        -DOPENSSL_NO_ERR          No error strings.
+no-krb5       -DOPENSSL_NO_KRB5         No Kerberos v5.
+no-engine     -DOPENSSL_NO_ENGINE       No dynamic engines.
+no-hw         -DOPENSSL_NO_HW           No support for external hardware.
+
+Not documented:
+
+no-tlsext     -DOPENSSL_NO_TLSEXT
+no-cms        -DOPENSSL_NO_CMS
+no-jpake      -DOPENSSL_NO_JPAKE
+no-capieng    -DOPENSSL_NO_CAPIENG
+
+./config no-idea no-aes no-camellia no-seed no-bf no-cast no-des no-rc2 no-rc4 no-rc5 \
+no-md2 no-md4 no-ripemd no-mdc2 no-rsa no-dsa no-dh no-ec no-ecdsa no-ecdh no-sock \
+no-ssl2 no-ssl3 no-err no-krb5 no-engine no-hw
+make depend
+make build_crypto
+
+---
+
+./config no-asm no-async shared no-md2 no-md4 no-mdc2 no-poly1305 no-blake2 no-siphash no-sm3 no-rc2 no-rc4 no-rc5 no-idea no-aria no-bf no-cast no-camellia no-seed no-sm4 no-chacha no-ec no-dsa no-sm2 no-dso no-engine no-err no-comp no-ocsp no-cms no-ts no-srp no-cmac no-ct --prefix=/home/{替换}/openssl-tiny/ --cross-compile-prefix=arm-hisiv300-linux-
+
+
+---
+
+
+no-ssl2	禁用SSLv2协议
+no-ssl3	禁用SSLv3协议
+no-ssl	禁用SSL协议
+no-tls	禁用TLS协议
+no-md2	禁用MD2算法
+no-md4	禁用MD4算法
+no-md5	禁用MD5算法
+no-mdc2	禁用mdc2算法
+no-ripemd	禁用ripemd算法
+[no-]des	禁用DES算法
+[no-]aes	禁用AES算法
+[no-]rc2	禁用rc2算法
+[no-]rc4	禁用rc4算法
+[no-]rc5	禁用rc5算法
+[no-]idea	禁用IDEA算法
+[no-]bf	禁用Blowfish算法
+[no-]cast	禁用cast算法
+[no-]camellia	禁用camellia算法
+[no-]dsa	禁用DSA算法
+[no-]rsa	禁用RSA算法
+[no-]ec	禁用ec算法
+[no-]ecdsa	禁用ecdsa算法
+[no-]dh	禁用dh算法
+[no-]ecdh	禁用ecdh算法
+[no-]asm	是否使用汇编语言
+[no-]async
+[no-]shared	控制是否要生成动态库
+[no-]dso	控制是否要调用其他动态库
+[no-]comp	
+[no-]store	
+[no-]threads	是否支持多线程的库
+[no-]gmp	是否支持gmp库
+[no-]krb5	是否支持Kerberos 5库
+[no-]rfc3779	启用/禁用实现X509v3证书的IP地址扩展
+no-zlib	不使用zlib压缩功能
+zlib	使用zlib静态库
+zlib-dynamic	使用zlib动态库
+no-hw	关闭硬件支持
+no-engine	关闭硬件支持
+
+
+---
+
+
+
